@@ -1,27 +1,24 @@
 import { fetchApi } from "./fetchConfig.js";
+import convertFormData from './convertFormData';
 
 
 const register = async (data) => {
-    const formdata = new FormData()
-    Object.keys(data).forEach((key) => {
-        if(data[key] !== undefined && data[key] !== null){
-            formdata.append(key, data[key])
-        }
-    })
-
+    const formdata = await convertFormData(data)
     const response = await fetchApi("/users/register", {
         method: "POST",
-        body: JSON.stringify(formdata)
+        body: formdata
     })
     return response
 }
 
-const login = async (email, password) => {
+const login = async (data) => {
+    const formdata = await convertFormData(data)
     const response = await fetchApi("/users/login", {
         method: "POST",
-        body: JSON.stringify({ email, password })
+        body: formdata
     })
-    return response
+    const jsonData =  response.json()
+    return jsonData
 }
 
 const logout = async () => {
