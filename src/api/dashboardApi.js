@@ -1,4 +1,4 @@
-import { fetchApi } from "./fetchConfig";
+import { fetchApi } from "./fetchConfig.js";
 
 const getChannelStates = async () => {
     const response = await fetchApi("/dashboard/states", {

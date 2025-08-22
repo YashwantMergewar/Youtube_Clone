@@ -1,5 +1,5 @@
-import { fetchApi } from "./fetchConfig"
-import convertFormData from './convertFormData';
+import { fetchApi } from "./fetchConfig.js"
+import convertFormData from './convertFormData.js';
 
 const createPlaylist = async (data) => {
     const formdata = await convertFormData(data)

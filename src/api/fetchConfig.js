@@ -35,7 +35,7 @@ export async function fetchApi(endpoint, options = {}, retry = true){
     }
 
     try {
-        const response = await fetch(`${process.env.API_BASE_URL}${endpoint}`,{
+        let response = await fetch(`${process.env.API_BASE_URL}${endpoint}`,{
             ...options,
             credentials: 'include'
         })

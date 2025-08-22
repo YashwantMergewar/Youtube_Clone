@@ -1,4 +1,4 @@
-import { fetchApi } from "./fetchConfig";
+import { fetchApi } from "./fetchConfig.js";
 import convertFormData from "./convertFormData.js";
 
 const getCurrentUser = async () => {

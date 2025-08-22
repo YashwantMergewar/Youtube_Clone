@@ -1,5 +1,5 @@
 import { fetchApi } from "./fetchConfig.js";
-import convertFormData from './convertFormData';
+import convertFormData from './convertFormData.js';
 
 
 const register = async (data) => {
@@ -31,6 +31,5 @@ const logout = async () => {
 export {
     register,
     login,
-    getCurrentUser,
     logout
 }

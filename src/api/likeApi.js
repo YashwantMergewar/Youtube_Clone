@@ -1,4 +1,4 @@
-import { fetchApi } from "./fetchConfig";
+import { fetchApi } from "./fetchConfig.js";
 
 const toggleVideoLike = async (id) => {
     const response = await fetchApi(`/likes/toggle/v/${id}`, {
